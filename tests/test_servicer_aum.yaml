@@ -1,0 +1,26 @@
+test_servicer_aum:
+  model: dw_gold.servicer_aum
+  inputs:
+    dw_silver.active_loan:
+    - servicer: BSI
+      status: FCL
+      data_date: 2024-03-16
+      unpaid_principal_balance: 200
+    - servicer: BSI
+      status: FCL
+      data_date: 2024-03-16
+      unpaid_principal_balance: 300
+    - servicer: BSI
+      status: FCL
+      data_date: 2024-03-16
+      unpaid_principal_balance: 400
+  outputs:
+    query:
+    - servicer: BSI
+      date: 2024-03-16
+      aum: 900.0
+      d_o_y: '077'
+      year: 2024
+  vars:
+    start: '2024-03-16'
+    end: '2024-03-18'
