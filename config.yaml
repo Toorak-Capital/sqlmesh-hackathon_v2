@@ -1,0 +1,15 @@
+gateways:
+    local:
+        connection:
+              type: bigquery
+              method: service-account
+              project: np-toorak
+              location: us-east4
+              keyfile: np-toorak-sa.json
+              job_creation_timeout_seconds: 300
+              job_execution_timeout_seconds: 1800
+              job_retries: 3
+default_gateway: local
+ 
+model_defaults:
+    dialect: bigquery
